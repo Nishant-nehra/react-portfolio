@@ -1,0 +1,68 @@
+.cardWrap {
+	position: relative;
+	border-radius: 30px;
+	overflow: hidden;
+	margin: 2.5rem;
+}
+
+@media screen and (min-width: 576px) {
+	.cardWrap {
+		margin: 0.5rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.cardWrap {
+		margin: 2rem;
+	}
+}
+
+.cardWrap::before {
+	content: "";
+	background: radial-gradient(
+		circle,
+		rgba(63, 193, 251, 1) 0%,
+		rgba(70, 116, 252, 1) 100%
+	);
+	opacity: 0.85;
+	position: absolute;
+	width: 100%;
+	height: 0;
+	transition: 0.4s ease-in-out;
+}
+
+.cardWrap:hover::before {
+	height: 100%;
+}
+
+.cardWrap img {
+	width: 100%;
+	height: auto;
+}
+
+.cardText {
+	position: absolute;
+	text-align: center;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.5s ease-in-out;
+	opacity: 0;
+	width: 100%;
+}
+
+.cardWrap:hover .cardText {
+	top: 50%;
+	opacity: 1;
+}
+
+.cardText h4 {
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.cardText span {
+	font-style: italic;
+	font-weight: 400;
+	font-size: 15px;
+}
